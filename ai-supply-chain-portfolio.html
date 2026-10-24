@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Augmented Supply Chain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  /* Layout: single centered column, header then a 3-column card grid that stacks on phones */
+  :root {
+    --bg: #f5f7f8;
+    --surface: #ffffff;
+    --ink: #17222b;
+    --muted: #55636e;
+    --line: #dbe1e5;
+    --accent: #0f6b74;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10161b; --surface: #171f26; --ink: #e6ecef; --muted: #9aa8b2;
+      --line: #27323b; --accent: #5fc2c9; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10161b; --surface: #171f26; --ink: #e6ecef; --muted: #9aa8b2;
+    --line: #27323b; --accent: #5fc2c9; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  header { display: grid; gap: 0.75rem; max-width: 46rem; }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .byline { margin: 0; color: var(--muted); font-size: 1rem; }
+  .byline .name { color: var(--ink); font-weight: 500; }
+  .byline .email { user-select: all; }
+  .intro { margin: 0.25rem 0 0; font-size: 1.0625rem; max-width: 65ch; }
+  .intro a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .intro a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.25rem 1.25rem 1.375rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .card h2 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .finding { margin: 0; color: var(--muted); font-size: 0.9375rem; }
+  .deck {
+    justify-self: start;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .deck:hover { text-decoration-thickness: 2px; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI Augmented Supply Chain Management</h1>
+    <p class="byline"><span class="name">Steve Tai</span> · <span class="email">steve09@umd.edu</span></p>
+    <p class="intro">Nine real supply chain problems I learned to solve with AI — from my <a href="https://www.rhsmith.umd.edu/programs/business-masters/academics/supply-chain-management" target="_blank" rel="noopener">Master's in Supply Chain Management at the University of Maryland's Robert H. Smith School of Business</a>.</p>
+  </header>
+
+  <ul class="grid">
+    <li class="card">
+      <span class="label">Logistics</span>
+      <h2>Transportation Mode Selection</h2>
+      <p class="finding">Truck Transportation as middle ground balancing cost and delivery time</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1JmDOOtAVUXil1TESY13RVdeaErBFfCl2?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Transportation Mode Selection">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">Analytics</span>
+      <h2>Warehouse Operations Dashboard</h2>
+      <p class="finding">AI-data cleaning and Identifying Specific Warehouse Trouble</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1Wb4Q-ePzKxBUVVv3SDUu_IwrMJ0JSxde?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Warehouse Operations Dashboard">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">Operations</span>
+      <h2>Bottlenecks and Capacity Investment</h2>
+      <p class="finding">Identifying bottleneck</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1ndXRYxEkzaHG2u5GF-ljNIXvMHFDWdob?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Bottlenecks and Capacity Investment">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">Network Design</span>
+      <h2>Distribution Network Optimization</h2>
+      <p class="finding">Balancing between Shared and Segmented DCs</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1NHbNu96vDWkdxghl08xDhphFeXNEfnoc?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Distribution Network Optimization">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">Customer Insight</span>
+      <h2>Voice of Customer Analysis</h2>
+      <p class="finding">AI-VOC collection and rating</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1J71k8qmJ9VDGW9-cGpivD065h-st-IFc?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Voice of Customer Analysis">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">AI Agents</span>
+      <h2>Warehouse Dashboard Agent Design</h2>
+      <p class="finding">Establish Agentic AI Workflow for Warehouse Operation</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1p1LRi4_VsA5hlbygI5v6yFpyi8pAGIcE?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Warehouse Dashboard Agent Design">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">Forecasting</span>
+      <h2>Demand Forecasting Accuracy</h2>
+      <p class="finding">SMA Could be Simple Yet Useful</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1eeUrm6VaSk9x7tPmSuX6CN0tjlWWVfv6?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: Demand Forecasting Accuracy">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">AI Agents</span>
+      <h2>The Demand-Sensing Agent</h2>
+      <p class="finding">Applying Connectors to Demand Forecast Case</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1O4CczkF803hqP3a1GRrnEJPq7943jf-p?usp=drive_link" target="_blank" rel="noopener" aria-label="View full deck: The Demand-Sensing Agent">View Full Deck</a>
+    </li>
+    <li class="card">
+      <span class="label">AI Agents</span>
+      <h2>Agent Orchestration</h2>
+      <p class="finding">Agent-ran demand sensing and reordering</p>
+      <a class="deck" href="https://drive.google.com/drive/folders/1fCuEeqXz_ZNiD7_yXLRVe58xvzBHWg2g?usp=sharing" target="_blank" rel="noopener" aria-label="View full deck: Agent Orchestration">View Full Deck</a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
